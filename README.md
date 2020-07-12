@@ -4,3 +4,6 @@ For Apollo Library Please Check this path => \src\main\graphql\com\example\simpl
 for  schema.json , test.graphql .
 For Server Code make sure u have NPM installed in u r pc . then just run this npm start . 
 
+<img src="https://github.com/rahat14/Simple_GraphQL_Firebase_implementation/blob/master/Screenshot_1594570039.png" width="200" hight = "400">|
+<img src="https://github.com/rahat14/Simple_GraphQL_Firebase_implementation/blob/master/Screenshot_1594567499.png" width="200" hight = "400">|
+
