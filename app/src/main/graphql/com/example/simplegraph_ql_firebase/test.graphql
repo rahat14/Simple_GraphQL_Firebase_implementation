@@ -1,0 +1,10 @@
+query AllDonors {
+    donors{
+        namee
+        ph
+
+    }
+
+
+
+}

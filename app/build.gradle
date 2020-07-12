@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply plugin : 'com.apollographql.apollo'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.syntex_error.simplegraph_ql_firebase"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        multiDexEnabled true
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+
+
+}
+
+
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "com.apollographql.apollo:apollo-runtime:2.2.2"
+    // If not already on your classpath, you might need the jetbrains annotations
+    compileOnly("org.jetbrains:annotations:13.0")
+    testCompileOnly("org.jetbrains:annotations:13.0")
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.7.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
+}
+
+apollo {
+    generateKotlinModels = false // or false
+}
+//apollo client:download-schema --endpoint= http://localhost:4000/graphql schema.json
+// gradlew downloadApolloSchema \ --endpoint="http://localhost:4000/graphql" \ --schema="src/main/graphql/com/example/simplegraph_ql_firebase/schema.json"
+//apollo-codegen download-schema http:/localhost:4000/graphql --output src/main/graphql/com/example/simplegraph_ql_firebase/schema.json/
